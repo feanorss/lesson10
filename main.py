@@ -1,5 +1,5 @@
 class Person:
-    def __init__(self, name, age, gender, occupation, farbaoci):
+    def __init__(self, name, age, gender, occupation,farbaoci):
         self.name = name
         self.age = age
         self.gender = gender
@@ -16,11 +16,22 @@ class Person:
         vek = self.age - pocetrokov
         print(f"zostarol som na {vek}")
 
+class Student(Person):
+    def __init__(self, name, age, gender, occupation, farbaoci, score):
+        super().__init__(name, age, gender, occupation, farbaoci)
+        self.score = score
 
-patrik = Person("Patrik", 30, "muz", "Kysuce","cierna")
+    def jeGenius(self):
+        if self.score > 90:
+            print(f"{self.name} je genius a {self.gender}")
+        else:
+            print(f"{self.name} nie je genius a {self.gender}")
+
+
+patrik = Student("Patrik", 30, "muz", "Kysuce","cierna", 95)
 patrik.pozdrav()
 patrik.bydlisko()
-milos = Person("Milos", 33, "muz", "Bratislava", "zelena")
+milos = Student("Milos", 33, "muz", "Bratislava", "zelena", 48)
 milos.pozdrav()
 milos.bydlisko()
 milos.zostarni(30)
